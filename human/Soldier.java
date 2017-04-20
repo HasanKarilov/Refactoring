@@ -10,6 +10,7 @@ public class Soldier extends Human
         super(name, age);
     }
 
+    @Override
     public void live()
     {
         fight();
