@@ -2,7 +2,7 @@ package com.javarush.task.task29.task2909.car;
 
 import java.util.Date;
 
-public class Car {
+public abstract class Car {
     static public final int TRUCK = 0;
     static public final int SEDAN = 1;
     static public final int CABRIOLET = 2;
@@ -18,11 +18,18 @@ public class Car {
     private boolean driverAvailable;
     private int numberOfPassengers;
 
-    public Car(int type, int numberOfPassengers) {
+    protected Car(int type, int numberOfPassengers) {
         this.type = type;
         this.numberOfPassengers = numberOfPassengers;
     }
-
+    public static Car create(int type, int numberOfPassengers){
+        switch (type){
+            case TRUCK: return new Truck(numberOfPassengers);
+            case SEDAN: return new Sedan(numberOfPassengers);
+            case CABRIOLET: return new Cabriolet(numberOfPassengers);
+            default: return null;
+        }
+    }
     public int fill(double numberOfLiters) {
         if (numberOfLiters < 0)
             return -1;
@@ -72,11 +79,5 @@ public class Car {
     public void fastenDriverBelt() {
     }
 
-    public int getMaxSpeed() {
-        if (type == TRUCK)
-            return 80;
-        if (type == SEDAN)
-            return 120;
-        return 90;
-    }
+    public abstract int getMaxSpeed();
 }
