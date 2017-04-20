@@ -1,7 +1,5 @@
 package com.javarush.task.task29.task2909.human;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Teacher extends Human {
 
@@ -9,9 +7,7 @@ public class Teacher extends Human {
     private String university;
 
     public Teacher(String name, int age, int numberOfStudents) {
-        super(false);
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.numberOfStudents = numberOfStudents;
     }
 
