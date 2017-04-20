@@ -12,8 +12,8 @@ public class Cabriolet extends Car {
     @Override
     public int getMaxSpeed() {
         {
-            final int CABRIOLET_MAX_SPEED = 90;
-            return CABRIOLET_MAX_SPEED;
+            final int MAX_TRUCK_SPEED = 90;
+            return MAX_TRUCK_SPEED;
         }
     }
 }

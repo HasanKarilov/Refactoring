@@ -10,7 +10,7 @@ public class Truck extends Car{
 
     @Override
     public int getMaxSpeed() {
-        final int TRUCK_MAX_SPEED = 80;
-        return TRUCK_MAX_SPEED;
+        final int MAX_TRUCK_SPEED = 80;
+        return MAX_TRUCK_SPEED;
     }
 }

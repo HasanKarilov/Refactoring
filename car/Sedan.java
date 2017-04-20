@@ -12,8 +12,8 @@ public class Sedan extends Car{
     @Override
     public int getMaxSpeed()
     {
-        final int SEDAN_MAX_SPEED = 120;
-        return SEDAN_MAX_SPEED;
+        final int MAX_SEDAN_SPEED = 120;
+        return MAX_SEDAN_SPEED;
     }
     /*
       public static void main(String[] args) {

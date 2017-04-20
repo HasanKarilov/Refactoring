@@ -51,12 +51,11 @@ public abstract class Car {
     }
 
     public int getNumberOfPassengersCanBeTransferred() {
-        if (!isDriverAvailable())
-            return 0;
-        if (fuel <= 0)
-            return 0;
-
-        return numberOfPassengers;
+        if (canPassengersBeTransferred())
+        {
+            return numberOfPassengers;
+        }
+        return 0;
     }
 
     public boolean isDriverAvailable() {
@@ -68,12 +67,11 @@ public abstract class Car {
     }
 
     public void startMoving() {
-        if (numberOfPassengers > 0) {
+        if (numberOfPassengers > 0)
+        {
             fastenPassengersBelts();
-            fastenDriverBelt();
-        } else {
-            fastenDriverBelt();
         }
+        fastenDriverBelt();
     }
 
     public void fastenPassengersBelts() {
@@ -99,4 +97,8 @@ public abstract class Car {
         return summerFuelConsumption * length;
     }
 
+    private boolean canPassengersBeTransferred()
+    {
+        return isDriverAvailable() && fuel > 0;
+    }
 }
